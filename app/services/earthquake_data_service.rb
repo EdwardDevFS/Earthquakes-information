@@ -2,6 +2,20 @@ require_dependency Rails.root.join('app', 'handlers', 'features_handlers.rb').to
 
 class EarthquakeDataService
     
+    def self.get_features(mag_types, search)
+        if mag_types.is_a?(String)
+          mag_types = JSON.parse(mag_types) 
+        end   
+        @earthquakes_features = Earthquake.all()
+        if !mag_types.empty?
+            @earthquakes_features = @earthquakes_features.where(mag_type: mag_types)
+        end
+        if search
+            @earthquakes_features = @earthquakes_features.where("title ILIKE ?", "%#{search}%")
+        end
+        return @earthquakes_features
+    end
+
     def self.save_earthquake_data(features)
         features.each do |feature|
           next unless FeaturesHandlers.validate_feature(feature)

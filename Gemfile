@@ -13,7 +13,9 @@ gem "puma", ">= 5.0"
 
 gem 'httparty'
 
-gem 'will_paginate'
+gem 'kaminari'
+
+gem 'rack-cors', require: 'rack/cors'
 
 # gem "jbuilder"
 
