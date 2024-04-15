@@ -1,4 +1,3 @@
-require 'kaminari'
 require_dependency Rails.root.join('app', 'services', 'earthquake_data_service.rb').to_s
 
 class Api::Features::EarthquakesController < ApplicationController

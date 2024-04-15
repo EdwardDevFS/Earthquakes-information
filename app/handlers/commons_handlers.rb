@@ -1,4 +1,3 @@
-require 'kaminari'
 class CommonsHandlers
     
     def self.paginate(data, perpage, page, total)
