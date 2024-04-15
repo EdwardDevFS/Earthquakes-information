@@ -12,8 +12,8 @@ class Api::Features::EarthquakesController < ApplicationController
         }, status: 200
     end
 
-    def show 
-        @response = Earthquake.find(params[:id])
-        render json:{data: @response, message: ""}, status: 200
-    end
+    # def show 
+    #     @response = Earthquake.find(params[:id])
+    #     render json:{data: @response, message: ""}, status: 200
+    # end
 end
